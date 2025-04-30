@@ -29,7 +29,7 @@ public class PatientController {
 		return new ResponseEntity<>(patientService.findAllPatients(), HttpStatus.OK);
 	}
 
-	@PostMapping("/")
+	@PostMapping("/AddPatient")
 	public ResponseEntity<PatientResponseDTO> addPatient(@Valid @RequestBody PatientRequestDTO patientRequestDTO) {
 
 		PatientResponseDTO patientResponseDTO = patientService.createPatient(patientRequestDTO);
