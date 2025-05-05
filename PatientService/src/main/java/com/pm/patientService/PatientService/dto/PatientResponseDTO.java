@@ -5,7 +5,7 @@ import java.util.UUID;
 
 
 public class PatientResponseDTO {
-	private UUID id;
+	private Integer id;
 
 	private String name;
 
@@ -13,15 +13,13 @@ public class PatientResponseDTO {
 
 	private String address;
 
-	private LocalDate dateOfBirth;
+	private String dateOfBirth;
 
-	private LocalDate registeredDate;
-
-	public UUID getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -49,20 +47,13 @@ public class PatientResponseDTO {
 		this.address = address;
 	}
 
-	public LocalDate getDateOfBirth() {
+	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(LocalDate dateOfBirth) {
+	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public LocalDate getRegisteredDate() {
-		return registeredDate;
-	}
-
-	public void setRegisteredDate(LocalDate registeredDate) {
-		this.registeredDate = registeredDate;
-	}
 
 }

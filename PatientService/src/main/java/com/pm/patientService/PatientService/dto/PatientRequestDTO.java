@@ -9,6 +9,9 @@ import jakarta.validation.constraints.Size;
 
 public class PatientRequestDTO {
 
+	@NotNull
+	private Integer id;
+
 	@NotBlank
 	@Size(max = 100, message = "Name cannot exceed 100 charachters")
 	private String name;
@@ -21,10 +24,18 @@ public class PatientRequestDTO {
 	private String address;
 
 	@NotBlank(message = "DOB is required")
-	private LocalDate dateOfBirth;
+	private String dateOfBirth;
 	
 	@NotNull(message = "Date of registration is required")
-	private LocalDate registeredDate;
+	private String registeredDate;
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getId() {
+		return id;
+	}
 
 	public String getName() {
 		return name;
@@ -50,19 +61,19 @@ public class PatientRequestDTO {
 		this.address = address;
 	}
 
-	public LocalDate getDateOfBirth() {
+	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(LocalDate dateOfBirth) {
+	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public LocalDate getRegisteredDate() {
+	public String getRegisteredDate() {
 		return registeredDate;
 	}
 
-	public void setRegisteredDate(LocalDate registeredDate) {
+	public void setRegisteredDate(String registeredDate) {
 		this.registeredDate = registeredDate;
 	}
 

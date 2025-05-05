@@ -3,6 +3,7 @@ package com.pm.patientService.PatientService.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.pm.patientService.PatientService.mapper.PatientMapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,15 +28,13 @@ public class PatientServiceImpl implements PatientService {
 
 	public List<PatientResponseDTO> findAllPatients() {
 		List<PatientResponseDTO> patientDtos = patientRepository.findAll().stream()
-				.map(patient -> mapper.map(patient, PatientResponseDTO.class)).collect(Collectors.toList());
+				.map(patient -> PatientMapper.toDto(patient)).collect(Collectors.toList());
 		return patientDtos;
 	}
 
 	@Override
 	public PatientResponseDTO createPatient(PatientRequestDTO patientRequestDTO) {
-		Patient patient = mapper.map(patientRequestDTO, Patient.class);
-		patientRepository.save(patient);
-		return mapper.map(patient, PatientResponseDTO.class);
+		return PatientMapper.toDto(patientRepository.save(PatientMapper.toModel(patientRequestDTO)));
 	}
 
 }

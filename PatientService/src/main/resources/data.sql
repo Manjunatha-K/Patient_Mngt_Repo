@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS patient
 
 -- Insert well-known UUIDs for specific patients
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '1',
+SELECT 1,
        'John Doe',
        'john.doe@example.com',
        '123 Main St, Springfield',
@@ -19,10 +19,10 @@ SELECT '1',
        '2024-01-10'
 WHERE NOT EXISTS (SELECT 1
                   FROM patient
-                  WHERE id = '1');
+                  WHERE id = 1);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '12',
+SELECT 12,
        'Jane Smith',
        'jane.smith@example.com',
        '456 Elm St, Shelbyville',
@@ -30,10 +30,10 @@ SELECT '12',
        '2023-12-01'
 WHERE NOT EXISTS (SELECT 1
                   FROM patient
-                  WHERE id = '12');
+                  WHERE id = 12);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '123',
+SELECT 123,
        'Alice Johnson',
        'alice.johnson@example.com',
        '789 Oak St, Capital City',
@@ -41,10 +41,10 @@ SELECT '123',
        '2022-06-20'
 WHERE NOT EXISTS (SELECT 1
                   FROM patient
-                  WHERE id = '123');
+                  WHERE id = 123);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '2',
+SELECT 2,
        'Bob Brown',
        'bob.brown@example.com',
        '321 Pine St, Springfield',
@@ -52,10 +52,10 @@ SELECT '2',
        '2023-05-14'
 WHERE NOT EXISTS (SELECT 1
                   FROM patient
-                  WHERE id = '2');
+                  WHERE id = 2);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '3',
+SELECT 3,
        'Emily Davis',
        'emily.davis@example.com',
        '654 Maple St, Shelbyville',
@@ -63,95 +63,95 @@ SELECT '3',
        '2024-03-01'
 WHERE NOT EXISTS (SELECT 1
                   FROM patient
-                  WHERE id = '3');
+                  WHERE id = 3);
 
 -- Insert well-known UUIDs for specific patients
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '4',
+SELECT 4,
        'Michael Green',
        'michael.green@example.com',
        '987 Cedar St, Springfield',
        '1988-07-25',
        '2024-02-15'
-WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = '4');
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = 4);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '5',
+SELECT 5,
        'Sarah Taylor',
        'sarah.taylor@example.com',
        '123 Birch St, Shelbyville',
        '1992-04-18',
        '2023-08-25'
-WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = '5');
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = 5);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '6',
+SELECT 6,
        'David Wilson',
        'david.wilson@example.com',
        '456 Ash St, Capital City',
        '1975-01-11',
        '2022-10-10'
-WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = '6');
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = 6);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '7',
+SELECT 7,
        'Laura White',
        'laura.white@example.com',
        '789 Palm St, Springfield',
        '1989-09-02',
        '2024-04-20'
-WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = '7');
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = 7);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '8',
+SELECT 8,
        'James Harris',
        'james.harris@example.com',
        '321 Cherry St, Shelbyville',
        '1993-11-15',
        '2023-06-30'
-WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = '8');
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = 8);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '9',
+SELECT 9,
        'Emma Moore',
        'emma.moore@example.com',
        '654 Spruce St, Capital City',
        '1980-08-09',
        '2023-01-22'
-WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = '9');
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = 9);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '10',
+SELECT 10,
        'Ethan Martinez',
        'ethan.martinez@example.com',
        '987 Redwood St, Springfield',
        '1984-05-03',
        '2024-05-12'
-WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = '10');
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = 10);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '11',
+SELECT 11,
        'Sophia Clark',
        'sophia.clark@example.com',
        '123 Hickory St, Shelbyville',
        '1991-12-25',
        '2022-11-11'
-WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = '11');
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = 11);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '12',
+SELECT 12,
        'Daniel Lewis',
        'daniel.lewis@example.com',
        '456 Cypress St, Capital City',
        '1976-06-08',
        '2023-09-19'
-WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = '12');
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = 12);
 
 INSERT INTO patient (id, name, email, address, date_of_birth, registered_date)
-SELECT '13',
+SELECT 13,
        'Isabella Walker',
        'isabella.walker@example.com',
        '789 Willow St, Springfield',
        '1987-10-17',
        '2024-03-29'
-WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = '13');
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE id = 13);
