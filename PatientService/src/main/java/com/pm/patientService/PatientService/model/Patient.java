@@ -19,7 +19,7 @@ public class Patient {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private UUID id;
+	private int id;
 	
 	@NotNull
 	private String name;
@@ -38,11 +38,11 @@ public class Patient {
 	@NotNull
 	private LocalDate registeredDate;
 
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

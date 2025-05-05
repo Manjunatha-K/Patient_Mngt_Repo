@@ -24,7 +24,7 @@ public class PatientController {
 	@Autowired
 	PatientService patientService;
 
-	@GetMapping
+	@GetMapping("/findAllPatients")
 	public ResponseEntity<List<PatientResponseDTO>> findAllPatients() {
 		return new ResponseEntity<>(patientService.findAllPatients(), HttpStatus.OK);
 	}
