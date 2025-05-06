@@ -9,8 +9,6 @@ import jakarta.validation.constraints.Size;
 
 public class PatientRequestDTO {
 
-	@NotNull
-	private Integer id;
 
 	@NotBlank
 	@Size(max = 100, message = "Name cannot exceed 100 charachters")
@@ -28,14 +26,6 @@ public class PatientRequestDTO {
 	
 	@NotNull(message = "Date of registration is required")
 	private String registeredDate;
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Integer getId() {
-		return id;
-	}
 
 	public String getName() {
 		return name;

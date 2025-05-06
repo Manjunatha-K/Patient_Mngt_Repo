@@ -10,7 +10,7 @@ public class PatientMapper {
 
     public static PatientResponseDTO toDto(Patient patient){
         PatientResponseDTO patientResponseDTO = new PatientResponseDTO();
-        patientResponseDTO.setId(patient.getId());
+        patientResponseDTO.setId(patient.getId().toString());
         patientResponseDTO.setName(patient.getName());
         patientResponseDTO.setEmail(patient.getEmail());
         patientResponseDTO.setAddress(patient.getAddress());
@@ -21,7 +21,7 @@ public class PatientMapper {
 
     public static Patient toModel(PatientRequestDTO patientRequestDTO){
         Patient patient = new Patient();
-        patient.setId(patientRequestDTO.getId());
+       // patient.setId(Integer.valueOf(patientRequestDTO.getId()));
         patient.setName(patientRequestDTO.getName());
         patient.setEmail(patientRequestDTO.getEmail());
         patient.setAddress(patientRequestDTO.getAddress());
