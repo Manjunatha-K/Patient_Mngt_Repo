@@ -8,4 +8,6 @@ import com.pm.patientService.PatientService.model.Patient;
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Integer>{
 
+
+     boolean existsByEmail(String email);
 }

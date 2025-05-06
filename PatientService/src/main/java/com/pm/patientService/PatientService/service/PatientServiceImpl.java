@@ -3,6 +3,7 @@ package com.pm.patientService.PatientService.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.pm.patientService.PatientService.exceptions.EmailAlreadyExistsException;
 import com.pm.patientService.PatientService.mapper.PatientMapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,10 @@ public class PatientServiceImpl implements PatientService {
 
 	@Override
 	public PatientResponseDTO createPatient(PatientRequestDTO patientRequestDTO) {
+
+		if(patientRepository.existsByEmail(patientRequestDTO.getEmail())){
+			throw new EmailAlreadyExistsException("Email already exists "+ patientRequestDTO.getEmail());
+		}
 		return PatientMapper.toDto(patientRepository.save(PatientMapper.toModel(patientRequestDTO)));
 	}
 
