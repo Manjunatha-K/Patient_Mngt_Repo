@@ -47,18 +47,22 @@ public class PatientServiceImpl implements PatientService {
 	@Override
 	public PatientResponseDTO updatePatientService(PatientRequestDTO patientRequestDTO, Integer id) {
 		Patient patient = patientRepository.findById(id).orElseThrow(()-> new PatientNotFoundException("Patient with ID :"+id+" not found"));
-		if(patientRepository.existsByEmail(patientRequestDTO.getEmail())){
+		if(patientRepository.existsByEmailAndIdNot(patientRequestDTO.getEmail(), id)){
 			throw new EmailAlreadyExistsException("Patient with Email already exists "+ patientRequestDTO.getEmail());
 		}
 		patient.setName(patientRequestDTO.getName());
 		patient.setEmail(patientRequestDTO.getEmail());
 		patient.setAddress(patientRequestDTO.getAddress());
 		patient.setDateOfBirth(LocalDate.parse(patientRequestDTO.getDateOfBirth()));
-		patient.setRegisteredDate(LocalDate.parse(patientRequestDTO.getRegisteredDate()));
 
 		patientRepository.save(patient);
 
 		return PatientMapper.toDto(patient);
+	}
+
+	@Override
+	public void deletePatientService(Integer id) {
+		patientRepository.deleteById(id);
 	}
 
 }
