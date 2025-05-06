@@ -32,5 +32,13 @@ public class GlobalExceptionHandler {
 		errors.put("Message", "Email Already Exists in the Database");
 		return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
 	}
+	@ExceptionHandler(PatientNotFoundException.class)
+	public ResponseEntity<Map<String,String>> handlePatientNotFoundException(PatientNotFoundException ex){
+		Map<String,String> errors = new HashMap<>();
+		log.warn("Patient not found with ID : {}", ex.getMessage());
+		errors.put("Message"," Patient with id : " +ex.getMessage()+" are not present in the Database");
+		return new ResponseEntity<>(errors, HttpStatus.NOT_FOUND);
+	}
+
 
 }

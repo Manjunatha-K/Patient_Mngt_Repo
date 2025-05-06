@@ -12,4 +12,6 @@ public interface PatientService {
 	public List<PatientResponseDTO> findAllPatients();
 	
 	public PatientResponseDTO createPatient(PatientRequestDTO patientRequestDTO);
+
+	public PatientResponseDTO updatePatientService(PatientRequestDTO patientRequestDTO, Integer id);
 }
