@@ -3,6 +3,7 @@ package com.pm.AuthService.service;
 import com.pm.AuthService.dto.LoginRequestDTO;
 import com.pm.AuthService.model.User;
 import com.pm.AuthService.util.JWTUtil;
+import io.jsonwebtoken.JwtException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -31,4 +32,13 @@ public class AuthService {
         return token;
     }
 
+    public boolean validateToken(String token) {
+        try{
+            jwtUtil.validateToken(token);
+            return true;
+
+        } catch (JwtException e) {
+           return false;
+        }
+    }
 }
